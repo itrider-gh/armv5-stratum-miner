@@ -23,10 +23,11 @@ Optionally add `-static` if you want a fully static binary (larger).
 
 ## 📦 Deploy on device
 
-1. Copy binary (and if dynamic, required `ld-linux.so.3` + libc) to the SD or `/mnt`.
+1. Copy binary (and if dynamic, required `ld-linux.so.3` + libc in /mnt/lib) to the SD or `/mnt`.
 2. On the device:
 
    ```sh
+   mount --bind /mnt/lib /lib (if dynamic)
    chmod +x /mnt/miner
    /mnt/miner <host> <port> <user.worker> <password>
    ```
