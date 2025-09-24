@@ -3,14 +3,14 @@
 A proof-of-concept Stratum v1 CPU miner for **ARMv5** (tested on Anyka SoCs inside cheap IP cameras).  
 It is extremely slow (sub-1KH/s) and not meant for profit — **educational purposes only**.
 
-## ✨ Features
+## Features
 - Minimal **Stratum v1** client (subscribe, authorize, notify, submit).
 - Pure C, no external dependencies.
 - **Reconnection** with backoff (1s → 10s).
 - Periodic **hashrate display** (every 10s).
 - Cross-compiles cleanly with `arm-linux-gnueabi-gcc`.
 
-## ⚙️ Build
+## Build
 On a Debian/Ubuntu host with ARM cross-compiler:
 
 ```bash
@@ -21,7 +21,7 @@ file miner   # should say: ELF 32-bit ARM, EABI5
 
 Optionally add `-static` if you want a fully static binary (larger).
 
-## 📦 Deploy on device
+## Deploy on device
 
 1. Copy binary (and if dynamic, required `ld-linux.so.3` + libc in /mnt/lib) to the SD or `/mnt`.
 2. On the device:
@@ -34,7 +34,7 @@ Optionally add `-static` if you want a fully static binary (larger).
 
 If your pool only supports SSL (`stratum+ssl://`), run through a local stunnel/port-forwarder, since this client only speaks TCP.
 
-## 📝 Example
+## Example
 
 ```sh
 /mnt/miner eu.ckpool.org 3333 1YourBTCAddress.worker x
@@ -48,7 +48,7 @@ Output:
 [+] SHARE nonce=00abc123 ex2=00000002
 ```
 
-## ⚠️ Disclaimer
+## Disclaimer
 
 * **Not profitable**: ARMv5 devices extremely low hashrates
 * **Educational use only**: built to show how Stratum protocol works.
@@ -56,5 +56,5 @@ Output:
 
 ---
 
-✍️ Author: itrider-gh
-📜 License: [MIT](LICENSE)
+Author: itrider-gh
+License: [MIT](LICENSE)
